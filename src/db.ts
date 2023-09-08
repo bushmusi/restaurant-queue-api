@@ -4,7 +4,7 @@ const dbOptions: ConnectOptions = {
   authSource: 'admin', 
 };
 
-const dbURL = 'mongodb://127.0.0.1:27017/restaurant';
+const dbURL = 'mongodb://mongodb:27017/restaurant-queue';
 
 async function connectToDatabase() {
   try {

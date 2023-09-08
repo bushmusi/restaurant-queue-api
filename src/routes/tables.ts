@@ -1,5 +1,6 @@
 import express, { Request, Response, Router } from 'express';
 import Table from '../models/Table';
+import CustomerQueue from '../models/CustomerQueue';
 
 const router: Router = express.Router();
 
@@ -22,6 +23,7 @@ router.post('/add-tables', async (req, res) => {
 
     const tablesData = [];
     await Table.deleteMany({});
+    await CustomerQueue.deleteMany({});
 
     for (let i = 1; i <= numTables; i++) {
       const tableName = `table_${i}`;
